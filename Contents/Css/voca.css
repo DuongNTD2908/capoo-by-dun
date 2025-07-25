@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+.vocabulary-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: none !important;
+}
+
+.vocabulary-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.vocabulary-item {
+    margin: 10px 0;
+    padding: 10px 30px;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.31);
+    background-color: #ccddfbe0;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.vocabulary-item:last-child {
+    border-bottom: none;
+}
+
+.vocabulary-item h3 {
+    color: #333;
+    margin: 10px 0;
+    font-size: 1.4em;
+}
+
+.vocabulary-item p {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.vocabulary-item strong {
+    color: #555;
+}
+
+.autocomplete-suggestions {
+    border: none !important;
+    border: 1px solid #ddd;
+    margin-top: 64px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    width: 71% !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+    left: 57px;
+    .suggestion-item {
+        border: none !important;
+    }
+}
+
+.autocomplete-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.autocomplete-suggestions div:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.form-search {
+    position: relative;
+}

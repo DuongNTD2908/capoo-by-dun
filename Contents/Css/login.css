@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../Jpg/dangnhap.jpg');
+}
+div.main-log {
+    width: 60%;
+    height: 65vh;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    &:hover {
+        box-shadow: 0 5px 15px rgba(8, 0, 247, 0.35);
+    }
+    div.log-container {
+        width: 50%;
+        div.log {
+            padding: 20px;
+            background-color: #fffffff0;
+            h2 {
+                text-align: center;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                input {
+                    width: 80%;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                }
+                button {
+                    width: 40%;
+                    padding: 10px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #fff;
+                        color: #007bff;
+                        border: 1px solid #007bff;
+                    }
+                }
+            }
+        }
+    }
+    div.toggle-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        color: #fff;
+        overflow: hidden;
+        transition: all 0.6s ease-in-out;
+        border-radius: 10px;
+        z-index: 1000;
+        h2 {
+            font-size: 35px;
+        }
+        h2,
+        p {
+            text-align: center;
+        }
+    }
+}
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+div.signin {
+    left: 0;
+    z-index: 2;
+    width: 50%;
+    opacity: 1;
+    display: grid;
+    align-items: center;
+}
+
+div.main-log.active .signin {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+div.signup {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    width: 50%;
+    display: grid;
+    align-items: center;
+}
+
+div.main-log.active .signup {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+div.text-toggle {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    margin-left: -19px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+    h2,
+    p,
+    button {
+        margin: 10px 0;
+    }
+    button {
+        padding: 10px;
+        width: 150px;
+        background-color: #007bff;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            background-color: #fff;
+            border: none;
+            color: #007bff;
+        }
+    }
+}
+
+div.main-log.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 10px;
+}
+
+div.toggle {
+    background-color: #007bfff5;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+div.main-log.active .toggle {
+    transform: translateX(50%);
+}
+
+div.text-left {
+    transform: translateX(-200%);
+}
+
+div.main-log.active .text-left {
+    transform: translateX(0);
+}
+
+div.text-right {
+    right: 0;
+    transform: translateX(0);
+}

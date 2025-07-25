@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../Contents/Jpg/game/logoDHV.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../Contents/Css/ingame.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <title>DHV INGAME</title>
+</head>
+
+<body>
+    <img src="../Contents/Jpg/game/LogoDHVNgang.png" alt="" width="220px"
+        style="position: absolute; top: 12px; left: 12px; z-index: 1" />
+    <img src="../Contents/Jpg/logo.png" alt="" width="150px" style="position: absolute; left: 220px; z-index: 1" />
+    <div class="sky">
+        <div class="sun"></div>
+        <div class="main-cloud">
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+            <div class="cloud">
+                <img src="../Contents/Jpg/game/cloud.png" alt="Cloud" class="cloud-image" />
+            </div>
+        </div>
+    </div>
+    <div class="ground">
+        <img src="../Contents/Jpg/game/dongco.png" alt="" width="100%" />
+        <div class="button-container">
+            <!-- <div class="now" id="now">
+                <div class="now-khung"></div>
+                <div class="cham"></div>
+                <div class="cham"></div>
+                <div class="cham"></div>
+                <div class="nhon"></div>
+            </div> -->
+
+            <div class="button-item game1">
+                <button id="chapter1" class="inner-button game1">
+                    1
+                </button>
+            </div>
+            <div class="button-item game2">
+                <button id="chapter2" class="inner-button game2">2</button>
+            </div>
+            <div class="button-item game3">
+                <button id="chapter3" class="inner-button game3">3</button>
+            </div>
+            <div class="button-item game4">
+                <button id="chapter4" class="inner-button game4">4</button>
+            </div>
+            <div class="button-item game5">
+                <button id="chapter5" class="inner-button game5">5</button>
+            </div>
+            <div class="button-item game6">
+                <button id="chapter6" class="inner-button game6">6</button>
+            </div>
+            <div class="button-item game7">
+                <button id="chapter7" class="inner-button game7">7</button>
+            </div>
+            <div class="button-item game8">
+                <button id="chapter8" class="inner-button game8">8</button>
+            </div>
+            <div class="button-item game9">
+                <button id="chapter9" class="inner-button game9">9</button>
+            </div>
+            <div class="button-item game10">
+                <button id="chapter10" class="inner-button game10">10</button>
+            </div>
+
+        </div>
+        <img class="road" src="../Contents/Jpg/game/road.png" alt="">
+    </div>
+    <a href="maingame.php"><img class="exit" src="../Contents/Jpg/game/logout.png" alt="" /></a>
+    <div class="popup-wrapper hidden" id="popup-wrapper">
+        <div class="color-dots"></div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <div class="content"></div>
+                <span id="closeBtn" class="close-btn">&times;</span>
+                <div id="question-container"></div>
+                <button id="submit-btn">Trả lời</button>
+                <div id="feedback" class="feedback"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../Contents/JavaScript/ingame.js"></script>
+    </script>
+    <div id="confirm-popup" class="confirm-popup hidden">
+        <div class="confirm-content">
+            <p>Bạn có chắc chắn muốn chơi lại không?</p>
+            <button id="confirm-yes">Có</button>
+            <button id="confirm-no">Không</button>
+        </div>
+    </div>
+    <div id="complete-popup" class="complete-popup hidden">
+        <div class="complete-content animate-popup">
+            <img src="../Contents/Jpg/game/capoo.gif" alt="Chúc mừng" class="popup-gif">
+            <img src="../Contents/Jpg/game/capoo1.gif" alt="Chúc mừng" class="popup-gif">
+            <h2>CHÚC MỪNG BẠN ĐÃ HOÀN THÀNH</h2>
+            <p>HÀNH TRÌNH 30 NĂM THÀNH LẬP</p>
+            <img src="../Contents/Jpg/game/LogoDHVcomau.png" alt="Logo" class="popup-logo">
+            <p>TRƯỜNG ĐẠI HỌC HÙNG VƯƠNG TP. HỒ CHÍ MINH</p>
+            <button id="complete-close">Thoát</button>
+        </div>
+    </div>
+    <audio id="bgm" src="../Contents/Sounds/ingame.mp3" loop></audio>
+
+    <script>
+        document.body.addEventListener("click", () => {
+            const audio = document.getElementById("bgm");
+            audio.play();
+        });
+    </script>
+
+</body>
+
+</html>

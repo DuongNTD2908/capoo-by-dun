@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../Contents/Jpg/hi.png" type="image/x-icon" />
+        <title>Capoo - Đăng nhập</title>
+        <link rel="stylesheet" href="../Contents/Css/login.css" />
+    </head>
+    <style>
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    </style>
+    <body>
+        <div class="main-log" id="container">
+            <div class="log-container">
+                <div class="log signup form-container">
+                    <form action="../Controllers/UserController.php?action=register" method="post" 
+                            autocomplete="off">
+                        <h2>Đăng ký</h2>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                        />
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="Tên đăng nhập"
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Mật khẩu"
+                        />
+                        <button class="submit" type="submit">Đăng ký</button>
+                        <a href="index.html" style="margin: 10px 0">Trở về trang chủ</a>
+                    </form>
+                </div>
+                <div class="log signin form-container">
+                    <form action="../Controllers/UserController.php?action=login" method="post">
+                        <h2>Đăng nhập</h2>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="Tên đăng nhập"
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Mật khẩu"
+                        />
+                        <button class="submit" type="submit">Đăng nhập</button>
+                        <div style="display: flex;">
+                            <a href="../index.php" style="margin: 10px 5px">Trở về trang chủ</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="text-toggle text-left">
+                        <h2>Chào mừng bạn đến với Capoo</h2>
+                        <p>
+                            Nếu bạn đã có tài khoản, chúng ta tiếp tục trò chơi
+                            nào!
+                        </p>
+                        <button class="hidden" id="signin">Đăng nhập</button>
+                    </div>
+                    <div class="text-toggle text-right">
+                        <h2>Chào mừng bạn đến với Capoo</h2>
+                        <p>
+                            Nếu bạn chưa có tài khoản, chúng ta cùng nhau tham
+                            gia bằng cách đăng ký tài khoản nhé!
+                        </p>
+                        <button class="hidden" id="signup">
+                            Tạo tài khoản
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const container = document.getElementById("container");
+            const registerBtn = document.getElementById("signup");
+            const loginBtn = document.getElementById("signin");
+
+            registerBtn.addEventListener("click", () => {
+                container.classList.add("active");
+            });
+
+            loginBtn.addEventListener("click", () => {
+                container.classList.remove("active");
+            });
+        </script>
+    </body>
+</html>

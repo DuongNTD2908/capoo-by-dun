@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capoo - Trang chủ</title>
+    <link rel="icon" href="../Contents/Jpg/hi.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../Contents/Css/header.css">
+    <link rel="stylesheet" href="../Contents/Css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="toggle-menu"></div>
+        <div class="header-content">
+            <div class="content container1">
+                <a href="../index.php"><img src="../Contents/Jpg/logo.png" alt="Capoo" width="150px"
+                        height="85px" /></a>
+            </div>
+            <div class="content container2">
+                <ul>
+                    <li>
+                        <a href="gioithieu.php">
+                            <p><strong>Giới thiệu</strong></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="hoc.php">
+                            <p><strong>Học</strong></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tuvung.php">
+                            <p><strong>Từ vựng</strong></p>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                            <p><strong>Trợ giúp</strong></p>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="content container3" id="user">
+            </div>
+            <script>
+                fetch("user.php")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById("user").innerHTML = data;
+                    })
+                    .catch((error) =>
+                        console.error("Error loading the header:", error)
+                    );
+            </script>
+        </div>
+    </div>
+    <script>
+        const header = document.querySelector(".header");
+        const toggle_menu = document.querySelector(".toggle-menu");
+        toggle_menu.onclick = function () {
+            header.classList.toggle("hide");
+        };
+    </script>
+    <main>
+        <div class="main-content1">
+            <div class="main-text">
+                <h1><span style="color: aqua;">CA</span><span style="color: #dedede;">POO</span></h1>
+                <p>
+                    Mong bạn có một trải nghiệm thật tuyệt vời khi đến với
+                    Capoo
+                </p>
+                <a class="learn-now" href="hoc.php">
+                    <div>
+                        <img src="../Contents/Jpg/rightarrow.png" alt="" width="100px" />
+                        <h1>Học ngay</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="main-image"></div>
+        </div>
+    </main>
+    <style>
+        .close-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup {
+            width: 89%;
+            max-width: 600px;
+            border-radius: 10px;
+            max-height: 90%;
+            position: fixed;
+            top: 20%;
+            left: 30%;
+            text-align: center;
+            z-index: 10000;
+            animation: len 0.5s ease;
+        }
+        @keyframes len {
+            from {
+                transform: translateY(500px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup h1 {
+            color: #fff;
+            font-size: 2.4rem;
+            font-weight: 100;
+            font-family: 'Raleway', sans-serif !important;
+            margin-bottom: 20px;
+        }
+
+        .popup a {
+            text-decoration: none;
+        }
+    </style>
+    <div id="close-popup" class="close-popup" onclick="closePopup()"></div>
+        <div id="popup" class="popup">
+            
+    <a href="maingame.php">
+            <h1>HÀNH TRÌNH</h1>
+            <img src="../Contents/Jpg/game/LOGO 30 NAM-10.png" alt="" width="100%">
+    </a>
+        </div>
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("close-popup").style.display = "none";
+        }
+    </script>
+    <!-- <script>
+            window.addEventListener("scroll", function () {
+                const header = document.querySelector(".header");
+                if (window.scrollY > 170) {
+                    header.classList.add("scroll");
+                } else {
+                    header.classList.remove("scroll");
+                }
+            });
+        </script> -->
+</body>
+
+</html>
